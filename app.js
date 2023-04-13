@@ -81,6 +81,7 @@ const teacher = {
 
 function initApp() {
     console.log("initApp: app.js is running 🎉");
+    // forOfSearchByTeachersName("Pet");
 }
 
 function showObject(object) {
@@ -92,16 +93,17 @@ function showObject(object) {
 
 // ========== forEach ========== //
 
-names.forEach(showObject);
-teachers.forEach(showObject);
-years.forEach(showObject);
+// names.forEach(showObject);
+// teachers.forEach(showObject);
+// years.forEach(showObject);
 
 // // ========== for loop ========== //
-for (let index = 0; index < names.length; index++) {
+function forNames() {
+    for (let index = 0; index < names.length; index++) {
     const name = names[index]
     console.log(name);
 }
-
+}
 function loopThroughFiveFirstYears() {
     for (let index = 0; index < years.length; index++) {
     const element = years[index];
@@ -122,51 +124,114 @@ function loopThroughFiveLastYears() {
     }
   }
 }
-loopThroughFiveFirstYears();
-loopThroughFiveLastYears();
+// loopThroughFiveFirstYears();
+// loopThroughFiveLastYears();
 
-for (let index = 0; index < 10; index++) {
-    const element = array[index];
-    console.log(element);
+function nulTilTi() {
+    for (let index = 0; index < 10; index++) {
+    console.log(index);
+}
 }
 
-for (let index = 1; index <= 10; index++) {
-    const element = array[index];
-    console.log(element);
+function etTilTi() {
+    for (let index = 1; index <= 10; index++) {
+    console.log(index);
 }
-for (let index = 10; index <= 0; index--) {
-    const element = array[index];
-    if (element === 0) {
+}
+function tiTilNul() {
+    for (let index = 10; index <= 0; index--) {
+    if (index === 0) {
         console.log("Liftoff!");
     }
     else {
-        console.log(element);
+        console.log(index);
     }
 }
-for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-    
+}
+function hverAnden() {
+    for (let index = 1; index <= 19; index +=2) {
+    console.log(index);  
+}
 }
 
+function dobbeltOp() {
+    for (let index = 1; index <= 16777216; index *= 2) {
+      console.log(index);
+    }
+}
+function treSteps() {
+    for (let index = 111; index <= 138; index += 3) {
+        console.log(index);
+        
+    }
+}
+function hundredeTilNul() {
+    for (let index = 100; index >= 0; index -=10) {
+        console.log(index);
+    }
+}
 // ========== for of loop ========== //
 
-for (const index of years) {
-    if (index === 2023) {
-        console.log("Current year");
-    }
-    else { console.log(index);} 
+function teachersss() {
+    for (const index of teachers) {
+   console.log(index);
+}
 }
 
+function teachersOverFyrre() {
+    const nytarray = [];
+    for (const index of teachers) {
+        if(index.age > 40) {
+            nytarray.push(index);
+        }
+    }
+    console.log(nytarray);
+}
+
+function forOfSearchByTeachersName(searchValue) {
+searchValue = searchValue.toLowerCase()
+console.log(searchValue);
+const results = [];
+for (const teacher of teachers) {
+    const name = teacher.name.toLowerCase();
+    // console.log(teacher);
+    if (name.includes(searchValue)) {
+        console.log(teacher);
+        results.push(teacher)
+        console.log(results);
+    }
+}
+}
 // ========== for in loop ========== //
 
-for (const index in names) {
-    if (names.hasOwnProperty.call(names, index)) {
-        const element = names[index];
+function forInTeacher() {
+    for (const index in teachers) {
+    if (teachers.hasOwnProperty.call(teachers, index)) {
+        const element = teachers[index];
         console.log(element);
     }
 }
-
+}
 // ========== while loops ========== //
+function whileTeachersLength() {
+    let index = 0
+    while (index < teachers.length) {
+        const teacher = teachers[index]
+        console.log(teacher);
+        index++;    
+}
+}
+whileTeachersIsLecturer();
+function whileTeachersIsLecturer() {
+  let index = 0;
+  while (index < teachers.length) {
+    const teacher = teachers[index];
+    if (teacher.title === "Lecturer") {
+    console.log(teacher);
+}
+index++;
+  }
+}
 
 // ========== Filter items: array.filter(...) ========== //
 
